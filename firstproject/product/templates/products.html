@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+ 
+
+*{background-color:white;}
+.h1
+{color: rgba(20, 21, 21, 0.864);}
+.p_name
+{color: black;}
+.p_desc
+{color: black;}
+
+
+</style>
+   {% include 'links.html'  %}
+</head>
+
+<body>
+<h1>{{request.session.currentUser}}</h1>  
+   {% include 'nav.html' %}
+
+
+    {% for product in object_list   %}
+
+      <ul>
+     
+      <li class="p_name"> <a href="{%  url 'productdetail' product.id %}">Name::{{product.pro_name}}</a> </li>
+      <li class="p_desc">{{product.pro_desc}}</li>
+      <div><img src="{{product.pro_picture.url}}" alt=""</div>
+
+
+
+      </ul>
+
+     {% endfor         %}  
+
+
+
+     
+</body>
+</html>

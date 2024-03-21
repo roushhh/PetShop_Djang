@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% include 'links.html'  %}
+</head>
+<body>
+    
+   {% include 'nav.html' %}      
+    
+
+   <table border="3">
+    
+
+      {%  for obj in product   %}
+   
+   
+      {% comment %}
+         
+      <p style="border:2px solid black;text-align:center;">{{forloop.counter}}</p>
+      <p style="border:2px solid black;text-align:center;">{{forloop.counter0}}</p>
+      <p style="border:2px solid black;text-align:center;">{{forloop.revcounter}}</p>
+      <p style="border:2px solid black;text-align:center;">{{forloop.revcounter0}}</p>
+      <p style="border:2px solid black;text-align:center;">{{forloop.first}}</p>
+      <p style="border:2px solid black;text-align:center;">{{forloop.last}}</p>
+
+      {% endcomment %}
+
+      
+      {% include 'productCard.html' with p=obj decision=forloop.fisrt last=forloop.last%}
+
+
+      {%     endfor      %}
+
+   {%include 'footer.html'%}
+     
+
+   </table>
+
+
+
+
+</body>
+</html>
